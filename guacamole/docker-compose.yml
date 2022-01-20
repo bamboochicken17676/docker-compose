@@ -1,0 +1,12 @@
+---
+version: "1"
+services:
+  guacd:
+    image: guacamole/guacd
+    container_name: guacd
+    networks:
+      - guacnetwork
+    volumes:
+      - /docker/drive:drive:rw
+      - /docker/record:/record:rw
+    restart: unless-stopped
