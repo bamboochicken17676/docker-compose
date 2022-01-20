@@ -1,0 +1,20 @@
+---
+version: "2"
+services:
+  chevereto:
+    image: lscr.io/linuxserver/chevereto
+    container_name: chevereto
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /docker/data/chevereto:/config
+      - /docker/pictures/:/data
+    ports:
+      - 88:80
+      - 444:443
+    restart: unless-stopped
+    depends_on:
+      - chevereto-db
+  chevereto-db:
