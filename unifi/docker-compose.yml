@@ -10,7 +10,7 @@ services:
       - MEM_LIMIT=2048 #optional
       - MEM_STARTUP=2048 #optional
     volumes:
-      - /home/matthew/docker/unifi/config:/config
+      - unifi-config:/config
     ports:
       - 3478:3478/udp
       - 10001:10001/udp
