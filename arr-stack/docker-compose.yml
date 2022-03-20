@@ -77,9 +77,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=America/Chicago
     volumes:
-      - /path/to/data:/config
+      - /docker/data/prowlarr:/config
     ports:
       - 9696:9696
     restart: unless-stopped
